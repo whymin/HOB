@@ -1,4 +1,4 @@
-<img src=".jpg" width="633" >
+<img src="image.png" width="633" >
 
 
 ## Conda environment
