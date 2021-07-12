@@ -1,0 +1,3 @@
+Nc1nc(Cl)nc2c1ncn2C1OC(CO)C(O)C1F
+NCCc1c[nH]c2ccc(O)cc12
+CC(N)(Cc1ccc(O)c(O)c1)C(=O)O
