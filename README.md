@@ -3,7 +3,7 @@
 
 ## Conda environment
 
-conda HobPre create -f Hob_env.yml
+     $ conda HobPre create -f Hob_env.yml
 
 Python 3.6
 
@@ -15,16 +15,18 @@ Python 3.6
 
    - numpy==1.19.2
 
-## How to use 
+## Usage
 
-conda activate HobPre
+     $ conda activate HobPre
 
-python HOB_predict.py your_model_path your_smiles.txt
+     $ python HOB_predict.py your_model_path your_smiles.txt
 
 example:
 
-python HOB_predict.py model smiles.txt
+     $ python HOB_predict.py model smiles.txt
 
 ## Reference
 
-*Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji1, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy (submitted)*
+*Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy (submitted)*
+     
+The data used in this paper can be obtained from *all_data_set.xlsx*
