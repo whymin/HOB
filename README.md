@@ -24,3 +24,7 @@ python HOB_predict.py your_model_path your_smiles.txt
 example:
 
 python HOB_predict.py model smiles.txt
+
+## Reference
+
+*Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji1, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy (submitted)
