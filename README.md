@@ -21,3 +21,6 @@ conda activate HobPre
 
 python HOB_predict.py your_model_path your_smiles.txt
 
+example:
+
+python HOB_predict.py model smiles.txt
