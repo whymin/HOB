@@ -1,6 +1,6 @@
 <img src="image.png" width="633" >
 
-Predictions can also be made directly on our online server at http://protein.org.cn/hob
+<p align="center">Predictions can also be made directly on our online server at http://protein.org.cn/hob</p>
 
 ## Conda environment
 
