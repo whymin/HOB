@@ -1,6 +1,6 @@
-<img src="image.png" width="633" >
+<div align=center><img src="image.png" width="1000"></div>
 
-<p align="center">Predictions can also be made directly on our online server at http://protein.org.cn/hob</p>
+# <p align="center"> Predictions can also be made directly on our online server at http://protein.org.cn/hob</p>
 
 ## Conda environment
 
@@ -28,7 +28,7 @@ example:
 
 ## Reference
 
-*Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy (submitted)*
+Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy *(submitted)*
      
 *The data used in this paper can be obtained from `all_data_set.xlsx `
 
