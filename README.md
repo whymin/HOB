@@ -1,4 +1,4 @@
-<div align=center><img src="image.png" width="1000"></div>
+<div align=center><img src="imageweb4.png" width="1000"></div>
 
 # <p align="center"> Predictions can also be made directly on our online server at http://protein.org.cn/hob</p>
 
@@ -26,6 +26,11 @@ example:
 
      $ python HOB_predict.py model smiles.txt 20
      
+     Parameter meaning:
+     model_path:The folder where the model to be used for prediction is located
+     smiles.txt:input smiles file,one per each line
+     cutoff:  50. Use F=50% as the cut-off value. If F>50%, the predicted oral availability is qualitatively high.             
+              20. Use F=20% as the cut-off value. If F>20%, the predicted oral availability is qualitatively high.
 
 ## Reference
 
