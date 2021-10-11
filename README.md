@@ -34,9 +34,9 @@ example:
 
 ## Reference
 
-Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji, Yifei Qi, and John Z.H. Zhang.In Silico Prediction of Human Oral Bioavailability with Improved Accuracy *(submitted)*
+Min Wei, Xudong Zhang, Xiaolin Pan, Bo Wang, Changge Ji, Yifei Qi, and John Z.H. Zhang.HobPre: accurate prediction of human oral bioavailability for small molecules  *(submitted)*
      
-*The data used in this paper can be obtained from [`hob_data_set.xlsx `](https://github.com/whymin/HOB/blob/main/hob_data_set.xlsx.xlsx)
+*The data used in this paper can be obtained from [`hob_data_set.xlsx `](https://github.com/whymin/HOB/blob/main/hob_data_set.xlsx)
 
 ## Model Parameters License
 
