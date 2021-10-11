@@ -37,7 +37,22 @@ def mordred_calculate(smiles_right,dirname=''):
     os.system(mingling)
     finger=pd.read_csv(finger_path)
     return finger
-def model_predict(smiles_right,mols_right,right_num,modelpt,dirname=''):
+def load_rfmodel(cutoff):
+    if cutoff=='20':
+        model_rf0 = pickle.load(open('%s/rf0_h.pkl' % modelpt, 'rb'))
+        model_rf1 = pickle.load(open('%s/rf1_h.pkl' % modelpt, 'rb'))
+        model_rf2 = pickle.load(open('%s/rf2_h.pkl' % modelpt, 'rb'))
+        model_rf3 = pickle.load(open('%s/rf3_h.pkl' % modelpt, 'rb'))
+        model_rf4 = pickle.load(open('%s/rf4_h.pkl' % modelpt, 'rb'))
+    if cutoff=='50':
+        model_rf0 = pickle.load(open('%s/hob_rf0.pkl' % modelpt, 'rb'))
+        model_rf1 = pickle.load(open('%s/hob_rf1.pkl' % modelpt, 'rb'))
+        model_rf2 = pickle.load(open('%s/hob_rf2.pkl' % modelpt, 'rb'))
+        model_rf3 = pickle.load(open('%s/hob_rf3.pkl' % modelpt, 'rb'))
+        model_rf4 = pickle.load(open('%s/hob_rf4.pkl' % modelpt, 'rb'))
+    return model_rf0,model_rf1,model_rf2,model_rf3,model_rf4
+
+def model_predict(cutoff,smiles_right,mols_right,right_num,modelpt,dirname=''):
     #calc = Calculator(descriptors, ignore_3D=True)
     #mordred_data = calc.pandas(mols_right)
     mordred_data=mordred_calculate(smiles_right)
@@ -48,31 +63,15 @@ def model_predict(smiles_right,mols_right,right_num,modelpt,dirname=''):
     pre_data1_0 = mordred_data[save_index1]
     pre_data1 = np.delete(np.array(pre_data1_0), zero1, axis=1)
     pre_data1[np.isnan(pre_data1)] = 0
-
-    model_rf0 = pickle.load(open('%s/hob_rf0.pkl'%modelpt, 'rb'))
-    #rf_pre0 = model_rf0.predict(pre_data1)
+    model_rf0,model_rf1,model_rf2,model_rf3,model_rf4=load_rfmodel(cutoff)
     rf_pre_proba0 = model_rf0.predict_proba(pre_data1)
-
-    model_rf1 = pickle.load(open('%s/hob_rf1.pkl'%modelpt, 'rb'))
-    #rf_pre1 = model_rf1.predict(pre_data1)
     rf_pre_proba1 = model_rf1.predict_proba(pre_data1)
-    
-    
-    model_rf2 = pickle.load(open('%s/hob_rf2.pkl'%modelpt, 'rb'))
-    #rf_pre2 = model_rf2.predict(pre_data1)
     rf_pre_proba2 = model_rf2.predict_proba(pre_data1)
-    
-    model_rf3 = pickle.load(open('%s/hob_rf3.pkl'%modelpt, 'rb'))
-    #rf_pre3 = model_rf3.predict(pre_data1)
     rf_pre_proba3 = model_rf3.predict_proba(pre_data1)
-    
-    model_rf4 = pickle.load(open('%s/hob_rf4.pkl'%modelpt, 'rb'))
-    #rf_pre4 = model_rf4.predict(pre_data1)
     rf_pre_proba4 = model_rf4.predict_proba(pre_data1)
-    
+
     pre_proba = (rf_pre_proba0 + rf_pre_proba1 + rf_pre_proba2+rf_pre_proba3+rf_pre_proba4)/float(5)
-    # pre=[]
-    
+
     pre_list=list(np.argmax(pre_proba,axis=1))
     pre_name=['Low','High']
     prediction=[]
@@ -92,12 +91,9 @@ def model_predict(smiles_right,mols_right,right_num,modelpt,dirname=''):
     df_right['probability(+)'] = pre_proba_list2
     return df_right
 
-
-
-
-
 modelpt=sys.argv[1]
 simles_file=sys.argv[2]
+cutoff=sys.argv[3]
 with open(simles_file,'r') as smiles_data:
     #smiles_list=smiles_data.readlines()
     content = smiles_data.read()
@@ -125,8 +121,7 @@ for i in range(len(mols)):
 df_error=pd.DataFrame()
 df_error['num'] = false_num
 df_error['smiles']=smiles_false
-df_right=model_predict(smiles_right, mols_right, right_num,modelpt)
-
+df_right=model_predict(cutoff,smiles_right, mols_right, right_num,modelpt)
 df=pd.concat([df_right,df_error],axis=0)
 df=df.sort_values(by='num')
 df=df.fillna(-1)
