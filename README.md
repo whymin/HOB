@@ -20,11 +20,12 @@ Python 3.6
 
      $ conda activate HobPre
 
-     $ python HOB_predict.py your_model_path your_smiles.txt
+     $ python HOB_predict.py your_model_path your_smiles.txt cutoff
 
 example:
 
-     $ python HOB_predict.py model smiles.txt
+     $ python HOB_predict.py model smiles.txt 20
+     
 
 ## Reference
 
