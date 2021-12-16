@@ -1,6 +1,6 @@
 <div align=center><img src="imageweb4.png" width="1000"></div>
 
-# <p align="center"> Predictions can also be made directly on our online server at http://www.icdrug.com/ICDrug%20A</p>
+# <p align="center"> Predictions can also be made directly on our online server at http://www.icdrug.com/ICDrug/A</p>
 
 ## Conda environment
 
